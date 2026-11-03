@@ -1,0 +1,51 @@
+{
+  "name": "mealmuster",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Reusable event meal-ordering application. MealMuster by DRMSITE.",
+  "license": "AGPL-3.0-or-later",
+  "author": "DRMSITE LTD (https://drmsite.com)",
+  "homepage": "https://drmsite.com/mealmuster/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DRMSITE/MealMuster.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DRMSITE/MealMuster/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite --config web/vite.config.js",
+    "build": "vite build --config web/vite.config.js",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "typecheck": "tsc -p tsconfig.json",
+    "check": "npm run sync:shared && npm run lint && npm run typecheck",
+    "test": "npm run sync:shared && vitest run --coverage",
+    "test:integration": "npm run sync:shared && vitest run --config vitest.integration.config.js",
+    "test:e2e": "npm run sync:shared && node scripts/emulator-run.js auth,firestore,functions npx playwright test",
+    "test:csp": "npm run sync:shared && node scripts/csp-run.js",
+    "emulators": "firebase emulators:start --only auth,firestore,functions,hosting",
+    "sonar": "node scripts/sonar.js",
+    "sync:shared": "node scripts/sync-shared.js",
+    "seed:emulator": "node seed/run.js"
+  },
+  "devDependencies": {
+    "@awesome.me/webawesome": "^3.14.0",
+    "@axe-core/playwright": "^4.14.0",
+    "@biomejs/biome": "^2.6.4",
+    "@playwright/test": "^1.64.1",
+    "@sonar/scan": "^5.0.2",
+    "@types/node": "^24.19.2",
+    "@vitest/coverage-v8": "^5.0.5",
+    "firebase": "^13.1.0",
+    "firebase-admin": "^14.5.0",
+    "firebase-tools": "^15.34.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}

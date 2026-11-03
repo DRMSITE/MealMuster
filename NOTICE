@@ -1,0 +1,17 @@
+MealMuster
+Copyright (C) 2026 DRMSITE LTD (https://drmsite.com)
+
+MealMuster is free software, licensed under the GNU Affero General Public
+Licence, version 3 or (at your option) any later version. See the LICENSE file.
+
+Attribution notice (GNU AGPL section 7(b)): if you modify or deploy MealMuster,
+please keep the "MealMuster by DRMSITE" credit in the page footer. Your own
+name, event details and wording may lead everywhere else.
+
+MealMuster comes with no warranty. It is software, not legal advice: whoever
+runs it is the data controller for their own deployment. That means a privacy
+notice, a decision about how long guests' details are kept (backups included),
+and responsibility for the accuracy of any menu, price or allergy information
+they publish.
+
+Third-party software used by MealMuster is listed in THIRD_PARTY_NOTICES.md.

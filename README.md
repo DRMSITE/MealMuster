@@ -1,15 +1,21 @@
 # MealMuster
 
-Reusable event meal ordering: invite people, collect RSVPs and per-diner meal choices, and produce a venue order summary. _MealMuster by DRMSITE._ The name is provisional and its availability has not been checked.
+Reusable event meal ordering. Someone organising a meal sends each guest a private link, the guest says whether they are coming and chooses food for themselves and any guests they bring, and the organiser gets a clear order to hand the venue. _MealMuster by DRMSITE._ The name is provisional, and I have not checked its availability as a trademark.
 
-Status: early release, built from a product brief (`SPEC.md`, with the original event's names and menu replaced by fictitious ones) and `IMPLEMENTATION_PLAN.md`. Released under the [MIT licence](LICENSE) by DRMSITE Ltd. See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
+Status: version 0.1.0, offered as a pre-release. It was built from a product brief ([SPEC.md](SPEC.md)) for one real group meal, and the names, address and menu from that event are replaced here with made-up ones, because a venue's menu is the venue's to publish. The plan it was built to is in [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md).
+
+## Licence
+
+MealMuster is free software under the GNU Affero General Public Licence, version 3 or (at your option) any later version, copyright DRMSITE LTD. I chose it, as for ParishMap, because MealMuster is a web service, and the AGPL keeps modified copies that are run over a network open to the people who use them. If you modify or deploy it, please keep the "MealMuster by DRMSITE" credit in the footer (see [NOTICE](NOTICE)). Contributions are made under the same licence with a sign-off ([CONTRIBUTING.md](CONTRIBUTING.md)), security problems go to [SECURITY.md](SECURITY.md) and not to a public issue, and third-party software is listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## Known limitations
 
-- A private link works like a key: anyone holding it can edit that booking. It protects against casual misuse, not a determined attacker, and the app says so to guests.
-- The accessibility checks are automated and scripted. **No real screen reader has been used yet**; the script for that is in [docs/accessibility.md](docs/accessibility.md).
-- The docs describe one kind of deployment (Firebase, one region). Anyone running it needs their own Firebase project, organiser accounts and privacy notice.
-- Not built: organiser editing of a booking, orderable prices on imported items, screens to create events or menus from scratch, and a scheduled retention trigger.
+Four things are worth knowing before you rely on it.
+
+- A private link works like a key: anyone holding it can edit that booking. That protects against casual misuse and not against a determined attacker, and the application tells guests so.
+- The accessibility checks are automated and scripted, and no real screen reader has been used yet. The script for that is in [docs/accessibility.md](docs/accessibility.md), and a person still needs to run it.
+- The documentation describes one kind of deployment (Firebase, in one region). You need your own Firebase project, organiser accounts and a privacy notice, and you are the data controller for what guests tell you.
+- Not built yet: editing a guest's booking as an organiser, orderable prices on imported items, screens to create an event or a menu from scratch, and a scheduled retention purge.
 
 ## Requirements
 

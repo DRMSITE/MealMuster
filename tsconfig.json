@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "types": ["node"]
+  },
+  "include": ["shared", "functions/src", "web", "seed", "scripts", "tests"],
+  "exclude": [
+    "functions/src/shared",
+    "functions/node_modules",
+    "node_modules",
+    "web/dist",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+    "tests/csp"
+  ]
+}

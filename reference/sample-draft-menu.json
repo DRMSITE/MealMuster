@@ -1,0 +1,139 @@
+{
+  "source": "Fictitious sample menu written for this repository. Not a real venue or a real price list.",
+  "status": "draft",
+  "approved": false,
+  "orderingMode": "a_la_carte",
+  "currency": "GBP",
+  "warning": "Fictitious sample data. This is NOT a confirmed Christmas, dine-in or group menu. Dietary labels are invented examples and must not be treated as allergy assurances. A real menu must be checked with the venue before taking orders.",
+  "menuType": "sample",
+  "printedTagDefinitionsVerified": false,
+  "notes": [
+    "Every item is flagged needs-manual-review: an organiser must check each one before the menu can be approved.",
+    "Printed prices are kept for reference and are never used as ordering prices.",
+    "Where a printed menu lists several choices on one line at one price (the two rice options here), they are imported as separate items that each carry that printed price.",
+    "Printed tags V, VG, GF and DF are reproduced exactly; their meanings are not defined by this sample."
+  ],
+  "sections": [
+    {
+      "name": "Snacks",
+      "items": [
+        {
+          "name": "Sample Nibbles",
+          "printedPriceMinor": 399,
+          "printedTags": ["V", "GF"],
+          "verification": "needs-manual-review"
+        },
+        {
+          "name": "Plain Crisps",
+          "printedPriceMinor": 100,
+          "printedTags": ["V", "GF"],
+          "verification": "needs-manual-review"
+        },
+        {
+          "name": "Spiced Crisps",
+          "printedPriceMinor": 150,
+          "printedTags": ["V", "GF"],
+          "verification": "needs-manual-review"
+        }
+      ]
+    },
+    {
+      "name": "Starters",
+      "items": [
+        {
+          "name": "Vegetable Soup",
+          "printedPriceMinor": 550,
+          "printedTags": ["VG"],
+          "verification": "needs-manual-review"
+        },
+        {
+          "name": "Garlic Mushrooms",
+          "printedPriceMinor": 595,
+          "printedTags": ["V"],
+          "verification": "needs-manual-review"
+        },
+        {
+          "name": "Chicken Skewers",
+          "printedPriceMinor": 650,
+          "printedTags": ["GF", "DF"],
+          "verification": "needs-manual-review"
+        }
+      ]
+    },
+    {
+      "name": "Mains",
+      "items": [
+        {
+          "name": "Sample Roast Chicken",
+          "printedPriceMinor": 1190,
+          "printedTags": ["GF"],
+          "verification": "needs-manual-review"
+        },
+        {
+          "name": "Mushroom Pie",
+          "printedPriceMinor": 1050,
+          "printedTags": ["V"],
+          "verification": "needs-manual-review"
+        },
+        {
+          "name": "Fish and Chips",
+          "printedPriceMinor": 1195,
+          "printedTags": ["DF"],
+          "verification": "needs-manual-review"
+        },
+        {
+          "name": "Lamb Casserole",
+          "printedPriceMinor": 1395,
+          "printedTags": ["DF", "GF"],
+          "verification": "needs-manual-review"
+        }
+      ]
+    },
+    {
+      "name": "Rice and sides",
+      "items": [
+        {
+          "name": "Steamed Rice",
+          "printedPriceMinor": 399,
+          "printedTags": [],
+          "verification": "needs-manual-review"
+        },
+        {
+          "name": "Pilau Rice",
+          "printedPriceMinor": 399,
+          "printedTags": [],
+          "verification": "needs-manual-review"
+        },
+        {
+          "name": "Chips",
+          "printedPriceMinor": 350,
+          "printedTags": ["V"],
+          "verification": "needs-manual-review"
+        },
+        {
+          "name": "Side Salad",
+          "printedPriceMinor": 399,
+          "printedTags": ["VG", "GF"],
+          "verification": "needs-manual-review"
+        }
+      ]
+    },
+    {
+      "name": "Desserts",
+      "items": [
+        {
+          "name": "Sticky Pudding",
+          "printedPriceMinor": 650,
+          "printedTags": ["V"],
+          "verification": "needs-manual-review"
+        },
+        {
+          "name": "Fruit Salad",
+          "printedPriceMinor": 499,
+          "printedTags": ["VG", "GF"],
+          "verification": "needs-manual-review"
+        }
+      ]
+    }
+  ]
+}

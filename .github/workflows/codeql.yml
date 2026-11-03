@@ -1,0 +1,29 @@
+name: CodeQL
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "23 4 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    name: Analyse JavaScript
+    runs-on: ubuntu-latest
+    # Code scanning is free for public repositories only. While this one is private it needs a
+    # paid GitHub plan, so the job is skipped until the repository is made public.
+    if: ${{ !github.event.repository.private }}
+    permissions:
+      actions: read # CodeQL looks up its own run; private repositories need this
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: github/codeql-action/init@v4
+        with:
+          languages: javascript-typescript
+      - uses: github/codeql-action/analyze@v4

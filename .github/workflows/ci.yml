@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+# The runner is pinned: ubuntu-latest has begun moving to Ubuntu 26.04, where the Playwright
+# system-package install stalls. Move to a newer release only after trying it. Every job has a
+# timeout so that a hang fails with a log you can read.
+jobs:
+  checks:
+    name: Types, lint, unit tests and build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # The Cloud Functions have their own lock file and are deployed as they stand.
+      - run: npm --prefix functions ci
+      - run: npm --prefix functions audit --omit=dev --audit-level=high
+      - run: npm run check
+      - run: npm test
+      - run: npm run build
+
+  integration:
+    name: Firestore rules and API (emulator)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 21
+      - run: npm ci
+      - run: npm --prefix functions ci
+      - run: npx firebase emulators:exec --only auth,firestore --project demo-mealmuster "npm run test:integration"
+
+  e2e:
+    name: Browser tests and accessibility
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 21
+      - run: npm ci
+      - run: npm --prefix functions ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - run: npm run test:csp
+      - uses: actions/upload-artifact@v7
+        if: failure()
+        with:
+          name: playwright-results
+          path: test-results/
+          retention-days: 7

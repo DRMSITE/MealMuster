@@ -1,0 +1,276 @@
+:root {
+  --mm-gap: 1rem;
+  --mm-max-width: 46rem;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: var(--wa-color-text-normal, #1c1c1c);
+  background: var(--wa-color-surface-default, #fff);
+}
+
+.site-header,
+.site-footer,
+main {
+  /* Long unbroken text (names, URLs, hostile input) must wrap, not widen the page. */
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+  max-width: var(--mm-max-width);
+  margin-inline: auto;
+  padding: 1rem;
+}
+
+.brand {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.site-footer {
+  font-size: 0.875rem;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
+  padding: 0.5rem 1rem;
+  background: var(--wa-color-surface-default, #fff);
+  outline: 3px solid currentColor;
+}
+
+main:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--wa-color-focus, #0b57d0);
+  outline-offset: 2px;
+}
+
+mm-booking,
+mm-redeem,
+mm-admin,
+mm-admin-event,
+mm-admin-summary,
+mm-admin-menu {
+  display: block;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mm-gap);
+}
+
+.stack > * {
+  margin: 0;
+}
+
+wa-card {
+  width: 100%;
+}
+
+.diner-actions,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.menu-section {
+  border: 0;
+  padding: 0;
+  margin: 0 0 var(--mm-gap);
+}
+
+.menu-section legend {
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: 0.25rem;
+}
+
+.item-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  min-height: 2.75rem;
+}
+
+.item-row .printed-labels,
+.item-row .price {
+  font-size: 0.875rem;
+}
+
+.review-list {
+  padding-inline-start: 1.25rem;
+}
+
+dl.summary {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+}
+
+dl.summary dt {
+  font-weight: 600;
+}
+
+dl.summary dd {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+}
+
+[data-area="admin"] .invitee-note {
+  display: none;
+}
+
+.admin-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.admin-bar p {
+  margin: 0;
+}
+
+.plain-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+caption {
+  text-align: start;
+  font-weight: 600;
+  padding-block-end: 0.5rem;
+}
+
+th,
+td {
+  border: 1px solid var(--wa-color-neutral-border-normal, #888);
+  padding: 0.5rem;
+  text-align: start;
+  vertical-align: top;
+}
+
+.link-button {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  min-block-size: 2.75rem;
+  padding: 0.25rem 0.5rem;
+  text-decoration: underline;
+}
+
+.link-box input,
+.stack input[type="datetime-local"] {
+  font: inherit;
+  max-inline-size: 100%;
+  padding: 0.5rem;
+}
+
+@media print {
+  .no-print,
+  .site-header,
+  .site-footer,
+  .admin-bar,
+  .skip-link {
+    display: none;
+  }
+
+  .booking-block {
+    break-inside: avoid;
+  }
+}
+
+.field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.field label {
+  min-inline-size: 14rem;
+}
+
+.field input[type="datetime-local"] {
+  font: inherit;
+  padding: 0.5rem;
+}
+
+td input[type="checkbox"] {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+}
+
+.field input[type="checkbox"] {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+}
+
+td input[type="text"] {
+  font: inherit;
+  inline-size: 100%;
+  min-inline-size: 12rem;
+  padding: 0.5rem;
+}
+
+.checklist li {
+  padding-inline-start: 0.25rem;
+}
+
+/* Touch and pointer targets: at least 44px tall (WCAG 2.5.8 asks for 24px). */
+wa-radio,
+wa-checkbox {
+  display: flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+}
+
+.error-link {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+}
