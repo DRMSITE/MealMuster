@@ -5,9 +5,9 @@ All notable changes are recorded here. The format follows
 [Semantic Versioning](https://semver.org/) once it reaches 1.0. A release that changes
 `firestore.rules` or the function's parameters says so, because those must be deployed with it.
 
-## [0.1.0] - Unreleased
+## [0.1.0] - 2026-11-03
 
-The first public release, offered as a pre-release. Give it a date here when the tag is made.
+The first public release, offered as a pre-release.
 
 ### Added
 
