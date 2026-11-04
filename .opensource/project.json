@@ -1,0 +1,13 @@
+{
+  "name": "MealMuster",
+  "platforms": ["Web"],
+  "content": "README.md",
+  "pages": {
+    "docs/deployment.md": "Firebase Deployment",
+    "docs/security.md": "Security",
+    "docs/accessibility.md": "Accessibility"
+  },
+  "related": [
+    "DRMSITE/parishmap"
+  ]
+}
