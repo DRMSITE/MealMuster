@@ -7,7 +7,5 @@
     "docs/security.md": "Security",
     "docs/accessibility.md": "Accessibility"
   },
-  "related": [
-    "DRMSITE/parishmap"
-  ]
+  "related": ["DRMSITE/parishmap"]
 }
