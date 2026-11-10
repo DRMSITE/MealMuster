@@ -41,7 +41,7 @@
     "@sonar/scan": "^5.0.2",
     "@types/node": "^24.19.2",
     "@vitest/coverage-v8": "^5.0.5",
-    "firebase": "^13.1.0",
+    "firebase": "^13.2.0",
     "firebase-admin": "^14.5.0",
     "firebase-tools": "^15.34.2",
     "typescript": "^7.0.2",
